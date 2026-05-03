@@ -1,0 +1,166 @@
+#,Races,Str,Dex,Con,Int,Wis,Cha,Special,Source,Notes
+1,Aarakocra,,+2,,,+1,,,"EE 4, EGW 165, MOM 6",
+2,Aasimar,,,,,+1,+2,,"DMG 286, MOM 7",Officially replaced by Aasimar race.
+,Aasimar - Fallen,+1,,,,,+2,,"VOLO 105, EGW 168",
+,Aasimar - Protector,,,,,+1,+2,,"VOLO 105, EGW 167",
+,Aasimar - Scourge,,,+1,,,+2,,"VOLO 105, EGW 167",
+3,Autognome,,,,,,,,UA: Traveler's of the Multiverse,
+4,Bugbear,+2,+1,,,,,,"VOLO 119, EB 25, EGW 174, MOM 8",
+5,Centaur,+2,,,,+1,,,"GGR 15, MOT 18, MOM 9",Adapted from UA: Centaurs and Minotaurs.
+6,Changeling,___,___,___,___,___,+2,One +1's,"EB 18, WGE 60, MOM 10","Adapted from UA: Races of Eberron, UA: Eberron."
+7,Chromatic Dragonborn - Black,,,,,,,,FIZ 10,Adapted from UA: Draconic Options.
+,Chromatic Dragonborn - Blue,,,,,,,,FIZ 10,Adapted from UA: Draconic Options.
+,Chromatic Dragonborn - Green,,,,,,,,FIZ 10,Adapted from UA: Draconic Options.
+,Chromatic Dragonborn - Red,,,,,,,,FIZ 10,Adapted from UA: Draconic Options.
+,Chromatic Dragonborn - White,,,,,,,,FIZ 10,Adapted from UA: Draconic Options.
+8,Dhampir,,,,,,,,VGR 16,Adapted from UA: Gothic Lineages
+9,Dragonborn - Black,+2,,,,,+1,,PHB 32,
+,Dragonborn - Blue,+2,,,,,+1,,PHB 32,
+,Dragonborn - Brass,+2,,,,,+1,,PHB 32,
+,Dragonborn - Bronze,+2,,,,,+1,,PHB 32,
+,Dragonborn - Copper,+2,,,,,+1,,PHB 32,
+,Dragonborn - Draconblood,,,,+2,,+1,,EGW 168,
+,Dragonborn - Gold,+2,,,,,+1,,PHB 32,
+,Dragonborn - Green,+2,,,,,+1,,PHB 32,
+,Dragonborn - Ravenite,+2,,+1,,,,,EGW 168,
+,Dragonborn - Red,+2,,,,,+1,,PHB 32,
+,Dragonborn - Silver,+2,,,,,+1,,PHB 32,
+,Dragonborn - White,+2,,,,,+1,,PHB 32,
+10,Dwarf - Gray (Duergar),+1,,+2,,,,,"SCAG 104, MTF 82, MOM 12",
+,Dwarf - Hill,,,+2,,+1,,,PHB 20,
+,Dwarf - Mark of Warding,,,+2,+1,,,,EB 51,
+,Dwarf - Mountain,+2,,+2,,,,,PHB 20,
+11,Elf - Astral,,,,,,,,UA: Traveler's of the Multiverse,
+,Elf - Avariel,,+2,,,,,,UA: Elf Subraces,More than 1 year with no updates.
+,Elf - Dark (Drow),,+2,,,,+1,,PHB 24,
+,Elf - Eladrin,,+2,,+1,,,,"DMG 286, MOM 13",Officially replaced by Eladrin subrace.
+,Elf - Eladrin - Fall,,+2,,,,+1,,MTF 62,Adapted from UA: Eladrin and Gith.
+,Elf - Eladrin - Spring,,+2,,,,+1,,MTF 62,Adapted from UA: Eladrin and Gith.
+,Elf - Eladrin - Summer,,+2,,,,+1,,MTF 62,Adapted from UA: Eladrin and Gith.
+,Elf - Eladrin - Winter,,+2,,,,+1,,MTF 62,Adapted from UA: Eladrin and Gith.
+,Elf - Grugach,+1,+2,,,,,,UA: Elf Subraces,More than 1 year with no updates.
+,Elf - High (Sun/Moon),,+2,,+1,,,,PHB 23,
+,Elf - High (Aereni),,+2,,+1,,,,DDB,
+,Elf - High (Valenar),,+2,,+1,,,,DDB,
+,Elf - Mark of Shadows,,+2,,,,+1,,EB 49,
+,Elf - Pallid,,+2,,,+1,,,EGW 163,
+,Elf - Sea,,+2,+1,,,,,"MTF 63, EGW 163, MOM 30",Adapted from UA: Elf Subraces.
+,Elf - Shadar-kai,,+2,+1,,,,,"MTF 63, MOM 31",Adapted from UA: Elf Subraces.
+,Elf - Wood,,+2,,,+1,,,PHB 24,
+,Elf - Wood (Aereni),,+2,,,+1,,,DDB,
+,Elf - Wood (Valenar),,+2,,,+1,,,DDB,
+12,Fairy,,,,,,,,"WBW 12, MOM 14",Adapted from UA: Folk of the Feywild.
+13,Firbolg,+1,,,,+2,,,"VOLO 106, EGW 169, MOM 15",
+14,Gem Dragonborn - Amethyst,,,,,,,,FIZ 11,Adapted from UA: Draconic Options.
+,Gem Dragonborn - Crystal,,,,,,,,FIZ 11,Adapted from UA: Draconic Options.
+,Gem Dragonborn - Emerald,,,,,,,,FIZ 11,Adapted from UA: Draconic Options.
+,Gem Dragonborn - Sapphire,,,,,,,,FIZ 11,Adapted from UA: Draconic Options.
+,Gem Dragonborn - Topaz,,,,,,,,FIZ 11,Adapted from UA: Draconic Options.
+15,Genasi - Air,,+1,+2,,,,,"EE 9, PA 228, EGW 171, MOM 16",
+,Genasi - Earth,+1,,+2,,,,,"EE 9, PA 229, EGW 172, MOM 17",
+,Genasi - Fire,,,+2,+1,,,,"EE 9, PA 229, EGW 172, MOM 17",
+,Genasi - Water,,,+2,,+1,,,"EE 9, PA 229, EGW 172, MOM 17",
+16,Giff,,,,,,,,UA: Traveler's of the Multiverse,
+17,Gith - Githyanki,+2,,,+1,,,,"MTF 97, MOM 18",Adapted from UA: Eladrin and Gith.
+,Gith - Githzerai,,,,+1,+2,,,"MTF 97, MOM 19",Adapted from UA: Eladrin and Gith.
+18,Glitchling,,,,,,,,UA: Wonders of the Multiverse,
+19,Gnome - Deep (Svirfneblin),,+1,,+2,,,,"EE 5, SCAG 115, MTF 115, MOM 11",
+,Gnome - Forest,,+1,,+2,,,,PHB 37,
+,Gnome - Mark of Scribing,,,,+2,,+1,,EB 47,
+,Gnome - Rock,,,+1,+2,,,,PHB 37,
+20,Goblin,,+2,+1,,,,,"VOLO 119, GGR 16, EB 26, EGW 174, MOM 20",
+21,Goliath,+2,,+1,,,,,"EE 10, VOLO 108, EGW 176, IDRF 291, MOM 21",
+22,Grung,,+2,+1,,,,,"OGA 4, DDB",
+23,Hadozee,,,,,,,,UA: Traveler's of the Multiverse,
+24,Half-Elf,___,___,___,___,___,+2,Two +1's,PHB 38,
+,Half-Elf - Aquatic (Variant),___,___,___,___,___,+2,Two +1's,SCAG 116,
+,Half-Elf - Drow (Variant),___,___,___,___,___,+2,Two +1's,SCAG 116,
+,Half-Elf - Mark of Detection,___,___,___,___,+2,___,One +1's,EB 40,
+,Half-Elf - Mark of Storm,,+1,,,,+2,,EB 50,
+,Half-Elf - Sun/Moon (Variant),___,___,___,___,___,+2,Two +1's,SCAG 116,
+,Half-Elf - Wood (Variant),___,___,___,___,___,+2,Two +1's,SCAG 116,
+25,Half-Orc,+2,,+1,,,,,PHB 40,
+,Half-Orc - Mark of Finding,,,+1,,+2,,,EB 41,
+26,Halfling - Ghostwise,,+2,,,+1,,,SCAG 110,
+,Halfling - Lightfoot,,+2,,,,+1,,PHB 28,
+,Halfling - Lotusden,,+2,,,+1,,,EGW 164,
+,Halfling - Mark of Healing,,+2,,,+1,,,EB 43,
+,Halfling - Mark of Hospitality,,+2,,,,+1,,EB 44,
+,Halfling - Stout,,+2,+1,,,,,PHB 28,
+27,Harengon,,,,,,,,"WBW 13, MOM 22",
+28,Hexblood,,,,,,,,VGR 18,Adapted from UA: Gothic Lineages
+29,Hobgoblin,,,+2,+1,,,,"VOLO 119, EB 26, EGW 175, MOM 23",
+,Hobgoblin of the Feywild,,,+2,+1,,,,UA: Folk of the Feywild,Officailly published in MOM.
+30,Hollow One,,,,,,,,EGW 182,Supernatural Gift
+31,Human ,+1,+1,+1,+1,+1,+1,,PHB 29,
+,Human (Variant),___,___,___,___,___,___,Two +1's,PHB 31,
+,Human - Mark of Finding,,,+1,,+2,,,EB 41,
+,Human - Mark of Handling,___,___,___,___,+2,___,One +1's,EB 42,
+,Human - Mark of Making,___,___,___,+2,___,___,One +1's,EB 45,
+,Human - Mark of Passage,___,+2,___,___,___,___,One +1's,EB 46,
+,Human - Mark of Sentinel,,,+2,,+1,,,EB 48,
+32,Kalashtar,,,,,+2,+1,,"EB 30, WGE 62",Adapted from UA: Races of Eberron.
+33,Kender,,,,,,,,"UA: Heros of Krynn, UA: Heros of Krynn Revisited",
+34,Kenku,,+2,,,+1,,,"VOLO 109, EGW 177, MOM 24",
+35,Kobold,,+2,,,,,,"VOLO 119, MOM 25",
+,Kobold (Variant),,,,,,,,UA: Draconic Options,Officailly published in MOM.
+36,Leonin,+1,,+2,,,,,MOT 20,
+37,Lizardfolk,,,+2,,+1,,,"VOLO 111, MOM 26",
+38,Locathah,+2,+1,,,,,,LR 24,
+39,Loxodon,,,+2,,+1,,,GGR 18,Adapted from UA: Races of Ravnica.
+40,Metallic Dragonborn - Brass,,,,,,,,FIZ 12,Adapted from UA: Draconic Options.
+,Metallic Dragonborn - Bronze,,,,,,,,FIZ 12,Adapted from UA: Draconic Options.
+,Metallic Dragonborn - Copper,,,,,,,,FIZ 12,Adapted from UA: Draconic Options.
+,Metallic Dragonborn - Gold,,,,,,,,FIZ 12,Adapted from UA: Draconic Options.
+,Metallic Dragonborn - Silver,,,,,,,,FIZ 12,Adapted from UA: Draconic Options.
+41,Minotaur,+2,,+1,,,,,"GGR 19, MOT 22, MOM 27",Adapted from UA: Centaurs and Minotaurs.
+,Minotaur - Krynn,+1,,,,,,,UA: Waterborne,Officially replaced by Minotaur race.
+42,Orc,+2,,+1,,,,,"VOLO 120, MOM 28",
+,Orc - Eberron ,+2,,+1,,,,,EB 32,
+,Orc - Exandria,+2,,+1,,,,,EGW 178,
+43,Owlfolk,,,,,,,,UA: Folk of the Feywild,Officially replaced by Owlin race.
+44,Owlin,,,,,,,,SCC 29,
+45,Plasmoid,,,,,,,,UA: Traveler's of the Multiverse,
+46,Rabitfolk,,,,,,,,UA: Folk of the Feywild,Officially replaced by Harengon race.
+47,Reborn,,,,,,,,VGR 20,Adapted from UA: Gothic Lineages
+48,Revenant - Dragonborn,+1,,+1,,,+1,,UA: Gothic Heros,More than 1 year with no updates.
+,Revenant - Human,,,+1,,,,Two +1's,UA: Gothic Heros,More than 1 year with no updates.
+,Revenant - Races w/ Subraces,,,+1,,,,,UA: Gothic Heros,More than 1 year with no updates.
+,Revenant - Tiefling,,,+1,,,,,UA: Gothic Heros,More than 1 year with no updates.
+49,Satyr,,+1,,,,+2,,"MOT 24, MOM 29",
+50,Shifter,,,,,,,,MOM 32,
+,Shifter - Beasthide,+1,,+2,,,,,"EB 34, WGE 66","Adapted from UA: Races of Eberron, UA: Eberron."
+,Shifter - Cliffwalker,,+2,,,,,,UA: Eberron,More than 1 year with no updates.
+,Shifter - Longstride,,+2,,,,,,UA: Eberron,More than 1 year with no updates.
+,Shifter - Longtooth,+2,+1,,,,,,"EB 34, WGE 66","Adapted from UA: Races of Eberron, UA: Eberron."
+,Shifter - Razorclaw,,+2,,,,,,UA: Eberron,More than 1 year with no updates.
+,Shifter - Swiftstride,,+2,,,,+1,,"EB 34, WGE 66","Adapted from UA: Races of Eberron, UA: Eberron."
+,Shifter - Wildhunt,,+1,,,+2,,,"EB 34, WGE 66","Adapted from UA: Races of Eberron, UA: Eberron."
+51,Simic Hybrid,___,___,+2,___,___,___,One +1's,GGR 20,Adapted from UA: Races of Ravnica.
+52,Tabaxi,,+2,,,,+1,,"VOLO 113, EGW 178, MOM 33",
+53,Thri-Kreen,,,,,,,,UA: Traveler's of the Multiverse,
+54,Tiefling - Abyssal,,,+1,,,+2,,UA: That Old Black Magic,More than 1 year with no updates.
+,Tiefling (Asmodeus),,,,+1,,+2,,PHB 42,
+,Tiefling - Baalzebul,,,,+1,,+2,,MTF 22,Adapted from UA: Fiendish Options.
+,Tiefling - Devil's Tongue,,,,+1,,+2,,SCAG 118,
+,Tiefling - Dispater,,+1,,,,+2,,MTF 22,Adapted from UA: Fiendish Options.
+,Tiefling - Feral,,+2,,+1,,,,SCAG 118,
+,Tiefling - Fierna,,,,,+1,+2,,MTF 22,Adapted from UA: Fiendish Options.
+,Tiefling - Glasya,,+1,,,,+2,,MTF 22,Adapted from UA: Fiendish Options.
+,Tiefling - Hellfire,,,,+1,,+2,,SCAG 118,
+,Tiefling - Infernal,,,,+1,,+2,,UA: That Old Black Magic,Officially replaced by Tiefling subraces.
+,Tiefling - Levistus,,,+1,,,+2,,MTF 22,Adapted from UA: Fiendish Options.
+,Tiefling - Mammon,,,,+1,,+2,,MTF 22,Adapted from UA: Fiendish Options.
+,Tiefling - Mephistopheles,,,,+1,,+2,,MTF 22,Adapted from UA: Fiendish Options.
+,Tiefling - Winged,,,,+1,,+2,,SCAG 118,
+,Tiefling - Zariel,+1,,,,,+2,,MTF 22,Adapted from UA: Fiendish Options.
+55,Tortle,+2,,,,+1,,,"TP 4, EGW 180, MOM 34",
+56,Triton,+1,,+1,,,+1,,"VOLO 115, MOT 26, MOM 35",
+57,Vedalken,,,,+2,+1,,,GGR 21,Adapted from UA: Races of Ravnica.
+58,Verdan,,,+1,,,+2,,AI 74,
+59,Viashino,+1,+2,,,,,,UA: Races of Ravnica,More than 1 year with no updates.
+60,Warforged,___,___,+2,___,___,___,One +1's,"EB 36, WGE 67","Adapted from UA: Races of Eberron, UA: Eberron."
+,Warforged - Envoy,___,___,+1,___,___,___,One +2's,UA: Races of Eberron,Officially replaced by Warforged race.
+,Warforged - Juggernaut,+2,,+1,,,,,UA: Races of Eberron ,Officially replaced by Warforged race.
+,Warforged - Skirmisher,,+2,+1,,,,,UA: Races of Eberron,Officially replaced by Warforged race.
+61,Yuan-Ti Pureblood,,,,+1,,+2,,"VOLO 120, MOM 26",

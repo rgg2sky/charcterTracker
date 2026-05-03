@@ -11,6 +11,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chartracker -d character_tracker"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
   web:
     build: .
@@ -23,7 +28,8 @@ services:
       DEBUG: "True"
       DATABASE_URL: postgresql://chartracker:chartracker_pass@db:5432/character_tracker
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
 volumes:
   postgres_data:

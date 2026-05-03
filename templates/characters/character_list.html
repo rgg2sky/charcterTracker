@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Your Characters</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/characters/new/">New character</a> |
+      <a href="/admin/">Admin</a> |
+      <a href="/accounts/logout/">Logout</a>
+    </nav>
+
+    <h1>Your Characters</h1>
+
+    <form method="get">
+      <input name="q" value="{{ q }}" placeholder="Search name/origin/summary" />
+      <button type="submit">Search</button>
+      {% if q %}<a href="/">Clear</a>{% endif %}
+    </form>
+
+    <ul>
+      {% for c in characters %}
+        <li>
+          <a href="{% url 'character_detail' c.character_id %}">{{ c.char_name }}</a>
+          — {{ c.char_origin }}
+        </li>
+      {% empty %}
+        <li>No characters yet.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
