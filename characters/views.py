@@ -65,6 +65,13 @@ def character_detail(request, character_id):
             "incoming_relationships": incoming,
         },
     )
+    relationships = []
+
+    for rel in outgoing:
+        relationships.append((rel.to_character, rel.relationship_type))
+
+    for rel in incoming:
+        relationships.append((rel.from_character, rel.relationship_type))
 
 
 @login_required
