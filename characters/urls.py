@@ -9,4 +9,5 @@ urlpatterns = [
     path("characters/new/", views.character_create, name="character_create"),
     path("characters/<int:character_id>/", views.character_detail, name="character_detail"),
     path("characters/<int:character_id>/edit/", views.character_edit, name="character_edit"),
+    path("characters/<int:character_id>/relationships/add/", views.relationship_add, name="relationship_add"),
 ]

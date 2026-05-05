@@ -21,12 +21,9 @@
     <p style="white-space: pre-wrap;">{{ character.backstory_summary }}</p>
 
 <h2>Relationships</h2>
-
 <ul>
   {% for other, rel_type in relationships %}
-<li>
-  <a href="{% url 'character_detail' other.character_id %}">{{ other.char_name }}</a>: {{ rel_type }}
-</li>
+    <li>{{ other.char_name }}: {{ rel_type.relationship_type }}</li>
   {% empty %}
     <li>No relationships.</li>
   {% endfor %}

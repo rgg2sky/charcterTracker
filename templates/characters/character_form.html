@@ -11,11 +11,32 @@
     </nav>
 
     <h1>{% if mode == "edit" %}Edit{% else %}New{% endif %} Character</h1>
-
+    {% if mode == "edit" %}
+      <hr>
+      
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit">{% if mode == "edit" %}Save{% else %}Create{% endif %}</button>
     </form>
+    
+      <h2>Relationships</h2>
+
+      <h3>Add relationship</h3>
+      <form method="post" action="{% url 'relationship_add' character.character_id %}">
+        {% csrf_token %}
+        {{ relationship_form.as_p }}
+        <button type="submit">Add</button>
+      </form>
+
+      <ul>
+        {% for other, rel_type in relationships %}
+          <li>{{ other.char_name }}: {{ rel_type.relationship_type }}</li>
+        {% empty %}
+          <li>No relationships.</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
   </body>
 </html>
