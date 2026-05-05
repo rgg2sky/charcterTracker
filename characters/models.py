@@ -49,10 +49,18 @@ class AssociationType(models.Model):
     """Types of relationships between characters"""
     relationship_type_id = models.AutoField(primary_key=True)
     relationship_type = models.CharField(max_length=100, unique=True)
-    
+
+    inverse_type = models.ForeignKey(
+        "self",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="inverse_of",
+    )
+
     class Meta:
         db_table = 'association_type'
-    
+
     def __str__(self):
         return self.relationship_type
 

@@ -11,15 +11,20 @@
     </nav>
 
     <h1>{% if mode == "edit" %}Edit{% else %}New{% endif %} Character</h1>
-    {% if mode == "edit" %}
-      <hr>
-      
+
+    <!-- Always show the character form (NEW and EDIT) -->
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit">{% if mode == "edit" %}Save{% else %}Create{% endif %}</button>
+      <button type="submit">
+        {% if mode == "edit" %}Save{% else %}Create{% endif %}
+      </button>
     </form>
-    
+
+    <!-- Only show relationships when editing an existing character -->
+    {% if mode == "edit" %}
+      <hr>
+
       <h2>Relationships</h2>
 
       <h3>Add relationship</h3>
@@ -37,6 +42,5 @@
         {% endfor %}
       </ul>
     {% endif %}
-
   </body>
 </html>

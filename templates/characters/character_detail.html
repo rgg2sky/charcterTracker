@@ -22,8 +22,11 @@
 
 <h2>Relationships</h2>
 <ul>
-  {% for other, rel_type in relationships %}
-    <li>{{ other.char_name }}: {{ rel_type.relationship_type }}</li>
+  {% for other, titles in relationship_groups %}
+    <li>
+      {{ other.char_name }}:
+      {{ titles|join:", " }}
+    </li>
   {% empty %}
     <li>No relationships.</li>
   {% endfor %}

@@ -6,7 +6,7 @@ from django.contrib import messages
 
 from .forms import CharacterForm, CharacterAssociationForm
 from .models import Character, CharacterAssociation
-
+from collections import defaultdict
 
 @login_required
 def character_list(request):
@@ -21,8 +21,7 @@ def character_list(request):
         )
 
     characters = characters.order_by("char_name")
-    return render(request, "characters/character_list.html", {"characters": characters, "q": q})
-
+    return render(request, "characters/character_list.html", {"characters": characters})
 
 @login_required
 def character_create(request):
@@ -37,7 +36,6 @@ def character_create(request):
         form = CharacterForm()
 
     return render(request, "characters/character_form.html", {"form": form, "mode": "create"})
-
 
 @login_required
 def character_detail(request, character_id):
@@ -54,13 +52,21 @@ def character_detail(request, character_id):
         .select_related("from_character", "relationship_type")
     )
 
-    relationships = []
-    for rel in outgoing:
-        relationships.append((rel.to_character, rel.relationship_type))
-    for rel in incoming:
-        relationships.append((rel.from_character, rel.relationship_type))
+    grouped = defaultdict(list)
 
-    relationships.sort(key=lambda t: (t[0].char_name or "").lower())
+    for rel in outgoing:
+        other = rel.to_character
+        grouped[other].append(rel.relationship_type.relationship_type)
+
+    for rel in incoming:
+        other = rel.from_character
+        grouped[other].append(rel.relationship_type.relationship_type)
+
+    relationship_groups = [
+        (other, sorted(set(types)))
+        for other, types in grouped.items()
+    ]
+    relationship_groups.sort(key=lambda t: (t[0].char_name or "").lower())
 
     relationship_form = CharacterAssociationForm(user=request.user, from_character=character)
 
@@ -69,7 +75,8 @@ def character_detail(request, character_id):
         "characters/character_detail.html",
         {
             "character": character,
-            "relationships": relationships,
+            "relationship_groups": relationship_groups,
+            "relationship_form": relationship_form,
         },
     )
 
