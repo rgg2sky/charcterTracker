@@ -1,42 +1,148 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>{% if mode == "edit" %}Edit{% else %}New{% endif %} Character</title>
-  </head>
-  <body>
-    <nav>
-      <a href="/">Back to list</a> |
-      <a href="/accounts/logout/">Logout</a>
-    </nav>
-
-    <h1>{% if mode == "edit" %}Edit{% else %}New{% endif %} Character</h1>
-    {% if mode == "edit" %}
-      <hr>
-      
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">{% if mode == "edit" %}Save{% else %}Create{% endif %}</button>
-    </form>
-    
-      <h2>Relationships</h2>
-
-      <h3>Add relationship</h3>
-      <form method="post" action="{% url 'relationship_add' character.character_id %}">
-        {% csrf_token %}
-        {{ relationship_form.as_p }}
-        <button type="submit">Add</button>
-      </form>
-
-      <ul>
-        {% for other, rel_type in relationships %}
-          <li>{{ other.char_name }}: {{ rel_type.relationship_type }}</li>
-        {% empty %}
-          <li>No relationships.</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if mode == "create" %}New Character{% else %}Edit Character{% endif %}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        button,
+        a.button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .btn-submit {
+            background: #667eea;
+            color: white;
+        }
+        .btn-submit:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .btn-cancel {
+            background: #e0e0e0;
+            color: #333;
+        }
+        .btn-cancel:hover {
+            background: #d0d0d0;
+        }
+        .error-message {
+            color: #d32f2f;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .errorlist {
+            list-style: none;
+            padding: 0;
+        }
+        .errorlist li {
+            color: #d32f2f;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{% if mode == "create" %}Create New Character{% else %}Edit Character{% endif %}</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="errorlist">
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            
+            <div class="button-group">
+                <button type="submit" class="btn-submit">
+                    {% if mode == "create" %}Create Character{% else %}Save Changes{% endif %}
+                </button>
+                <a href="{% url 'character_list' %}" class="button btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
 </html>

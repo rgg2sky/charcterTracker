@@ -1,33 +1,176 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Your Characters</title>
-  </head>
-  <body>
-    <nav>
-      <a href="/characters/new/">New character</a> |
-      <a href="/admin/">Admin</a> |
-      <a href="/accounts/logout/">Logout</a>
-    </nav>
-
-    <h1>Your Characters</h1>
-
-    <form method="get">
-      <input name="q" value="{{ q }}" placeholder="Search name/origin/summary" />
-      <button type="submit">Search</button>
-      {% if q %}<a href="/">Clear</a>{% endif %}
-    </form>
-
-    <ul>
-      {% for c in characters %}
-        <li>
-          <a href="{% url 'character_detail' c.character_id %}">{{ c.char_name }}</a>
-          — {{ c.char_origin }}
-        </li>
-      {% empty %}
-        <li>No characters yet.</li>
-      {% endfor %}
-    </ul>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            color: #333;
+        }
+        .btn-new {
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-new:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box form {
+            display: flex;
+            gap: 10px;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .search-box button {
+            padding: 12px 25px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .search-box button:hover {
+            background: #5568d3;
+        }
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .character-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .character-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .character-card p {
+            color: #666;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .character-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .character-card a:hover {
+            color: #5568d3;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 10px;
+            color: #999;
+        }
+        .empty-state h2 {
+            margin-bottom: 15px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My Characters</h1>
+            <a href="{% url 'character_create' %}" class="btn-new">+ New Character</a>
+        </div>
+        
+        {% if q %}
+        <div class="search-box">
+            <form method="GET">
+                <input type="text" name="q" placeholder="Search characters..." value="{{ q }}">
+                <button type="submit">Search</button>
+                <a href="{% url 'character_list' %}" style="padding: 12px 25px; background: #ddd; color: #333; text-decoration: none; border-radius: 5px; font-weight: 600;">Clear</a>
+            </form>
+        </div>
+        {% else %}
+        <div class="search-box">
+            <form method="GET">
+                <input type="text" name="q" placeholder="Search by name, origin, or backstory...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        {% endif %}
+        
+        {% if characters %}
+            <div class="characters-grid">
+                {% for character in characters %}
+                    <div class="character-card">
+                        <h3>{{ character.char_name }}</h3>
+                        <p><strong>Class:</strong> {{ character.char_class.char_class_name|default:"Not Set" }}</p>
+                        <p><strong>Race:</strong> {{ character.race.char_race_name|default:"Not Set" }}</p>
+                        {% if character.char_origin %}
+                            <p><strong>Origin:</strong> {{ character.char_origin }}</p>
+                        {% endif %}
+                        <a href="{% url 'character_detail' character.character_id %}">View Details →</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h2>No characters found</h2>
+                <p>{% if q %}Try a different search or{% else %}Create your first character to get started!{% endif %}</p>
+                {% if not q %}
+                    <a href="{% url 'character_create' %}" class="btn-new" style="display: inline-block; margin-top: 20px;">+ Create Character</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</body>
 </html>
