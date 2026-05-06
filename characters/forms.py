@@ -9,7 +9,7 @@ class CharacterForm(forms.ModelForm):
             "backstory_summary": forms.Textarea(attrs={"rows": 6}),
         }
 
-class CharacterAssociationForm(forms.ModelForm):
+class CharacterAssociationForm(forms.ModelForm): #form for creating/editing character relationships
     class Meta:
         model = CharacterAssociation
         fields = ["to_character", "relationship_type"]
@@ -17,12 +17,10 @@ class CharacterAssociationForm(forms.ModelForm):
     def __init__(self, *args, user=None, from_character=None, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # Only allow linking to characters owned by this user
-        if user is not None:
+        if user is not None: #used for filtering the character list to only show the users characters
             self.fields["to_character"].queryset = Character.objects.filter(user=user).order_by("char_name")
 
-        # Prevent selecting self
-        if from_character is not None:
+        if from_character is not None: #used to prevent linking a character to itself
             self.fields["to_character"].queryset = self.fields["to_character"].queryset.exclude(
                 character_id=from_character.character_id
             )

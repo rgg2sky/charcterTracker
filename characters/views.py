@@ -125,7 +125,7 @@ def character_edit(request, character_id):
         },
     )
 
-@require_POST
+@require_POST 
 @login_required
 def relationship_add(request, character_id):
     character = get_object_or_404(Character, character_id=character_id, user=request.user)

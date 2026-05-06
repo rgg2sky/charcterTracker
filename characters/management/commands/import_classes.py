@@ -21,9 +21,7 @@ class Command(BaseCommand):
             if not reader.fieldnames:
                 raise CommandError("classes.csv has no header row.")
 
-            # Your CSV uses "Class"
-            # We'll find it case-insensitively
-            header_map = {h.lower(): h for h in reader.fieldnames}
+            header_map = {h.lower(): h for h in reader.fieldnames} #make a case insensitive map of header names to actual header names
             class_col = header_map.get("class")
             if not class_col:
                 raise CommandError(f"Could not find 'Class' column. Headers: {reader.fieldnames}")
